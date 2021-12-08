@@ -1,79 +1,76 @@
 // Define an initial state value for the app
 const initialState = {
- tasks:[]
+  tasks: [],
 };
 
 // Create a "reducer" function that determines what the new state
 // should be when something happens in the app
 const reducerTasks = (state = initialState, action) => {
-
   const { type, payload } = action;
   // Reducers usually look at the type of action that happened
   // to decide how to update the state
 
   switch (type) {
-
     case "ALL_TASKS":
-      return payload;
+      return { tasks: payload };
 
     case "ADD_TASK":
-      localStorage.removeItem("token");
-      return { payload };
+      const tasks = [...state.tasks, payload];
+      return { tasks };
 
     case "DELETE_TASK":
-      localStorage.removeItem("token");
-      return { payload };
+      console.log("payload",payload);
+     const filteredTasks= state.tasks.filter(elem=>elem._id !== payload._id)
+       return {tasks:[...filteredTasks]};
 
     case "EDIT_TASK":
-      localStorage.removeItem("token");
-      return { payload };
-      
-    case "GET_TASK":
-        localStorage.removeItem("token");
-        return { payload };
+      const {task} = payload
+     const updated=state.tasks.map(elem=>{
+     
+        if(elem._id === payload._id){
+          return task
+        }else{
+          return elem
+        }
+      })
+      return {tasks: updated };
 
     default:
       // If the reducer doesn't care about this action type,
       // return the existing state unchanged
       return state;
-
   }
-
 };
 
 export default reducerTasks;
 
 export const allTasks = (data) => {
+  console.log("all", data);
   return {
     type: "ALL_TASKS",
     payload: data,
   };
 };
 
-export const addTask = (data) => {
+export const addTaskk = (data) => {
+  console.log("data", data);
   return {
     type: "ADD_TASK",
     payload: data,
   };
 };
 
-export const deleteTask = (data) => {
+export const deleteTaskk = (data) => {
   return {
     type: "DELETE_TASK",
     payload: data,
   };
 };
 
-export const editTask = (data) => {
+export const editTaskk = (data) => {
   return {
     type: "EDIT_TASK",
     payload: data,
   };
 };
 
-export const getTask = (data) => {
-  return {
-      type: "GET_TASK",
-      payload: data,
-    };
-  };

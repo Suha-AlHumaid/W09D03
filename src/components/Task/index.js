@@ -1,13 +1,15 @@
 import React, { useState } from "react";
 import axios from "axios";
-import { useSelector } from "react-redux";
+import { useSelector,useDispatch } from "react-redux";
+import { deleteTaskk ,editTaskk} from "../../Reducers/tasks";
+
 import "./style.css";
 
 const Task = ({ elem, getTasks }) => {
 
   const [editor, setEditor] = useState(false);
   const [task, setTask] = useState("");
-
+  const dispatch = useDispatch()
   const state = useSelector((state) => {
     return {
       reducerLog: state.reducerLog,
@@ -24,11 +26,12 @@ const Task = ({ elem, getTasks }) => {
           },
         }
       );
-
-      if (typeof result.data === "object") {
-        console.log(typeof result.data);
-        getTasks();
-      }
+      console.log(result.data);
+      dispatch(deleteTaskk(result.data))
+      // if (typeof result.data === "object") {
+      //   // console.log(result.data);
+     
+    
     } catch (error) {
       console.log(error);
     }
@@ -47,11 +50,10 @@ const Task = ({ elem, getTasks }) => {
           },
         }
       );
-
-      if (typeof result.data === "object") {
-        console.log(typeof result.data);
-        getTasks();
-      }
+      dispatch(editTaskk(result.data))
+      // if (typeof result.data === "object") {
+       
+      // }
       setEditor(false);
     } catch (error) {
       console.log(error);

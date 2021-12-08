@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { logOut } from "../../Reducers/login";
-import { allTasks } from "../../Reducers/tasks";
+
+import { allTasks ,addTaskk } from "../../Reducers/tasks";
 import axios from "axios";
 import Task from "../Task";
 import Home from "../Home";
@@ -21,7 +22,7 @@ const Tasks = ({ admin }) => {
     };
   });
 
-  console.log(state.reducerTasks);
+
   useEffect(() => {
     getTasks();
   }, []);
@@ -58,10 +59,7 @@ const Tasks = ({ admin }) => {
         }
       );
 
-      if (typeof result.data === "object") {
-        console.log(typeof result.data);
-        getTasks();
-      }
+      dispatch(addTaskk(result.data))
     } catch (error) {
       console.log(error);
     }
@@ -84,9 +82,9 @@ const Tasks = ({ admin }) => {
         <button onClick={addTask}>ADD NEW</button>
       </div>
       {state.reducerTasks&& 
-      state.reducerTasks.length? (
+      state.reducerTasks.tasks.length? (
         <>
-          {state.reducerTasks.map((elem) => (
+          {state.reducerTasks.tasks.map((elem) => (
             <Task key={elem._id} elem={elem} getTasks={getTasks} />
           ))}
         </>
