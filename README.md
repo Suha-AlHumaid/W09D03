@@ -30,7 +30,7 @@ When you register and loggin as admin you can see other users tasks. Also you ca
 * User
 
 
-## URM Diagrm:
+## UML Diagram
 ![URM ](https://github.com/Suha-AlHumaid/W09D03/blob/main/img/URM.jpg)
 
 ## Front end images: 
