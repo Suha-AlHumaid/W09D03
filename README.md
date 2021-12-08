@@ -3,6 +3,13 @@ It's todos list project frontend with authentication and authorization. It's inc
 
 
 # FRONT-END
+## Installation
+```
+npm i
+```
+## Quick start
+First you. have to create an account as a user then login. Creating a todo list is done simply by adding your first task. then you will see your tasks append as list. you can edit or delete sing task. In the bottom of page there is logout.
+When you register and loggin as admin you can see other users tasks. Also you can delete any user or delete his task.
 
 ## Components:
 * Home
@@ -12,6 +19,11 @@ It's todos list project frontend with authentication and authorization. It's inc
 * Task
 * Control Panel
 * User
+
+## Technologies:
+* React js
+* Redux
+* css
 
 ## Front end images: 
 #### LOGIN FORM:
