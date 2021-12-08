@@ -1,9 +1,28 @@
 # W09D03
 It's todos list project frontend with authentication and authorization. It's includes signin and register also control panel for admin.
 
+
+# FRONT-END
+
+## LOGIN FORM:
+
 ![login img](https://github.com/Suha-AlHumaid/W09D03/blob/main/img/login.png)
 
-# Backend
+## REGISTER FORM:
+
+![register img](https://github.com/Suha-AlHumaid/W09D03/blob/main/img/register.png)
+
+## TODOS LIST :
+
+![todos img](https://github.com/Suha-AlHumaid/W09D03/blob/main/img/todos.png)
+
+## CONTROL PANEL:
+
+![control panel img](https://github.com/Suha-AlHumaid/W09D03/blob/main/img/cotrolPanel.png)
+
+
+
+# BACK-END
 
 # Todos Api With Auths
 It's simple todos list project with authentication and authorization. It's includes signin and register system useing bcrybt and jwt. Give only permission for admin to delete or see users information and create custom role.
