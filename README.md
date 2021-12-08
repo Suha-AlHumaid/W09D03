@@ -1,10 +1,7 @@
 # W09D03
-It's todos list project frontend with authentication and authorization. It's includes signin and register also control panel for admin.
+### TODOS LIST
+It's todos list project frontend with authentication and authorization useing React - Redux. It's includes signin and register also control panel for admin.
 
-<<<<<<< HEAD
-![login img](https://github.com/Suha-AlHumaid/W09D03/blob/main/img/login.png=250x250)
-=======
->>>>>>> 6d6707e69cc0c3b79a8c52d0b95c6cc9efa0f4bd
 
 # FRONT-END
 ## Installation
@@ -15,6 +12,14 @@ npm i
 First you. have to create an account as a user then login. Creating a todo list is done simply by adding your first task. then you will see your tasks append as list. you can edit or delete sing task. In the bottom of page there is logout.
 When you register and loggin as admin you can see other users tasks. Also you can delete any user or delete his task.
 
+
+## Technologies:
+* React js
+* Redux
+* css
+
+## React Router Routes:
+
 ## Components:
 * Home
 * Loggin 
@@ -24,10 +29,9 @@ When you register and loggin as admin you can see other users tasks. Also you ca
 * Control Panel
 * User
 
-## Technologies:
-* React js
-* Redux
-* css
+
+## URM Diagrm:
+![URM ](https://github.com/Suha-AlHumaid/W09D03/blob/main/img/URM.jpg)
 
 ## Front end images: 
 #### LOGIN FORM:
@@ -84,10 +88,40 @@ secert_key=any secrt value
 ## Schemas:
  * Role schema
     <br>  contains this information: role and permessions
+    ```
+    const roleSchema = new mongoose.Schema({
+  role: { type: String , required: true },
+  permissions: { type: Array ,required: true},
+},
+{timestamps: true});
+    ```
  * user schema
    <br>  contains this information: email , password and role
+  
+  ```const userSchema = new mongoose.Schema({
+  email: { type: String, required: true,unique: true },
+  password: { type: String, required: true },
+  role: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'Role',
+    required: true
+ },{timestamps: true});
+   ```
   * Task schema
     <br> contains this information: email , password and role
+
+  ```const taskSchema = new mongoose.Schema({
+  task: { type: String, required: true },
+  isDele: { type: Boolean, default: false, required: true },
+  user: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'User',
+    required: true,
+  
+ }
+},
+{timestamps: true});
+```
 
  ## Routers:
 ### Role Routers
