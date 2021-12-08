@@ -4,19 +4,29 @@ It's todos list project frontend with authentication and authorization. It's inc
 
 # FRONT-END
 
-## LOGIN FORM:
+## Components:
+* Home
+* Loggin 
+* Register
+* Tasks
+* Task
+* Control Panel
+* User
+
+## Front end images: 
+#### LOGIN FORM:
 
 ![login img](https://github.com/Suha-AlHumaid/W09D03/blob/main/img/login.png)
 
-## REGISTER FORM:
+#### REGISTER FORM:
 
 ![register img](https://github.com/Suha-AlHumaid/W09D03/blob/main/img/register.png)
 
-## TODOS LIST :
+#### TODOS LIST :
 
 ![todos img](https://github.com/Suha-AlHumaid/W09D03/blob/main/img/todos.png)
 
-## CONTROL PANEL:
+#### CONTROL PANEL:
 
 ![control panel img](https://github.com/Suha-AlHumaid/W09D03/blob/main/img/cotrolPanel.png)
 
