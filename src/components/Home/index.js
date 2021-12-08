@@ -9,6 +9,7 @@ import "./style.css";
 const Home = () => {
 
   const [admin, setAdmin] = useState(false);
+  const [log , setLog]= useState(false)
   const state = useSelector((state) => {
     return {
       reducerLog: state.reducerLog,
@@ -26,8 +27,18 @@ const Home = () => {
     <>
       {!state.reducerLog.token ? (
         <div className="home">
+          {log?
+          <>
+          <Register /> 
+          <p>you have an account? <span className="icon" onClick={(e)=>setLog(false)}>Loggin here</span> </p>
+          </>:
+          <>
           <Login setAdmin={setAdmin} />
-          <Register />
+          <p>you don't have an account? <span className="icon" onClick={(e)=>setLog(true)}>Register here</span> </p>
+          </>
+          }
+      
+       
         </div>
       ) : !admin ? (
         <Tasks admin={admin} />
