@@ -1,9 +1,55 @@
 # W09D03
 It's todos list project frontend with authentication and authorization. It's includes signin and register also control panel for admin.
 
+<<<<<<< HEAD
 ![login img](https://github.com/Suha-AlHumaid/W09D03/blob/main/img/login.png=250x250)
+=======
+>>>>>>> 6d6707e69cc0c3b79a8c52d0b95c6cc9efa0f4bd
 
-# Backend
+# FRONT-END
+## Installation
+```
+npm i
+```
+## Quick start
+First you. have to create an account as a user then login. Creating a todo list is done simply by adding your first task. then you will see your tasks append as list. you can edit or delete sing task. In the bottom of page there is logout.
+When you register and loggin as admin you can see other users tasks. Also you can delete any user or delete his task.
+
+## Components:
+* Home
+* Loggin 
+* Register
+* Tasks
+* Task
+* Control Panel
+* User
+
+## Technologies:
+* React js
+* Redux
+* css
+
+## Front end images: 
+#### LOGIN FORM:
+
+![login img](https://github.com/Suha-AlHumaid/W09D03/blob/main/img/login.png)
+
+#### REGISTER FORM:
+
+![register img](https://github.com/Suha-AlHumaid/W09D03/blob/main/img/register.png)
+
+#### TODOS LIST :
+
+![todos img](https://github.com/Suha-AlHumaid/W09D03/blob/main/img/todos.png)
+
+#### CONTROL PANEL:
+
+![control panel img](https://github.com/Suha-AlHumaid/W09D03/blob/main/img/cotrolPanel.png)
+
+
+
+# BACK-END
+The code of backend see [W08D03](https://github.com/Suha-AlHumaid/W08D03).
 
 # Todos Api With Auths
 It's simple todos list project with authentication and authorization. It's includes signin and register system useing bcrybt and jwt. Give only permission for admin to delete or see users information and create custom role.
